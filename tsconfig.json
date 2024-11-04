@@ -1,0 +1,16 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "lib": ["dom", "es2015", "es2016"],
+    "jsx": "react-jsx",
+    "target": "es6",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./assets/react/controllers/*"],
+      "@/lib/utils": ["./assets/lib/utils"]
+    },
+  },
+  "include": ["assets/**/*"]
+}
