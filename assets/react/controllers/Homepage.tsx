@@ -1,3 +1,4 @@
+import ContactForm from "./components/common/ContactForm";
 import Header from "./components/common/Header";
 import NavbarItem from "./components/common/NavbarItem";
 import NormalParagraph from "./components/common/NormalParagraph";
@@ -13,8 +14,6 @@ import Linkedin from "./components/icons/Linkedin";
 import Thoughts from "./components/icons/Thoughts";
 import Tools from "./components/icons/Tools";
 import Upwork from "./components/icons/Upwork";
-import { Accordion } from "./components/ui/accordion";
-import { Button } from "./components/ui/button";
 
 export default function Home() {
   return (
@@ -27,10 +26,10 @@ export default function Home() {
           {/* <NavbarItem content="projects">
             <Folder />
           </NavbarItem> */}
-          <NavbarItem content="experience" link="#experience">
+          <NavbarItem content="experience" link="https://localhost:8000/#experience">
             <Experience />
           </NavbarItem>
-          <NavbarItem content="tools" link="#tools">
+          <NavbarItem content="tools" link="https://localhost:8000/#tools">
             <Tools />
           </NavbarItem>
           <NavbarItem content="let's talk" link="#talk">
@@ -67,7 +66,7 @@ export default function Home() {
               </div>
               <div>
                 <a
-                  href="#"
+                  href="#talk"
                   className="bg-sky-400 text-neutral-900 text-md font-bold px-1 py-[0.5px] rounded"
                 >
                   Let's Work Together
@@ -153,49 +152,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <form method="post" className=" flex flex-col gap-8 w-[700px]" id="#talk">
-              <Header primaryHeader="LET'S WORK" secondaryHeader="TOGETHER" />
-              <div>
-                <div className="flex gap-5 w-full">
-                  <div className="flex flex-col flex-1">
-                    <label htmlFor="name" className="text-neutral-400">
-                      Name
-                    </label>
-                    <input
-                      id="name"
-                      className="p-3 rounded-lg bg-neutral-900 text-white"
-                      placeholder="Your Name"
-                      type="text"
-                    />
-                  </div>
-                  <div className="flex flex-col flex-1">
-                    <label htmlFor="email" className="text-neutral-400">
-                      Email
-                    </label>
-                    <input
-                      id="email"
-                      className="p-3 rounded-lg bg-neutral-900 text-white"
-                      placeholder="Your@email.com"
-                      type="text"
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col">
-                  <label htmlFor="message" className="text-neutral-400">
-                    Message
-                  </label>
-                  <textarea
-                    className="rounded-lg bg-neutral-900 text-white h-36 p-3"
-                    name=""
-                    id="message"
-                    placeholder="Message"
-                  ></textarea>
-                </div>
-                <Button type="submit" className="bg-orange-600 w-full py-2 rounded-lg text-white mt-2 hover:bg-orange-500 duration-150">
-                  Submit
-                </Button>
-              </div>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </section>
@@ -208,7 +165,9 @@ export default function Home() {
           harakat.dev{" "}
         </a>
         | <span>Powered by </span>
-        <a href="https://ux.symfony.com/">Symfony UX</a>
+        <a className="text-orange-600" href="https://ux.symfony.com/">
+          Symfony UX
+        </a>
       </footer>
     </div>
   );

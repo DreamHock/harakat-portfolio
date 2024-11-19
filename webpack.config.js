@@ -1,4 +1,6 @@
 const Encore = require("@symfony/webpack-encore");
+const webpack = require("webpack");
+const { TanStackRouterWebpack } = require("@tanstack/router-plugin/webpack");
 
 const path = require("path");
 var dotenv = require("dotenv");
@@ -90,7 +92,8 @@ Encore
     options["process.env"] = options["process.env"] || {};
 
     options["process.env"]["APP_URL"] = JSON.stringify(env.parsed.APP_URL);
-  });
+  })
+  .addPlugin(TanStackRouterWebpack());
 
 // enables Sass/SCSS support
 //.enableSassLoader()
